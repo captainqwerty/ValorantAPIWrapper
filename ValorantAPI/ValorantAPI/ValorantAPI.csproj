@@ -63,6 +63,9 @@
     <Compile Include="Models\AbilityModel.cs" />
     <Compile Include="Models\AgentModel.cs" />
     <Compile Include="Models\MapModel.cs" />
+    <Compile Include="Models\MediaListModel.cs" />
+    <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\VoiceLineModel.cs" />
     <Compile Include="ValorantAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
