@@ -1,5 +1,22 @@
 ﻿Console.WriteLine("Valorant API Testing");
 
+//do
+//{
+//    Console.WriteLine("Map Name:");
+//    string mapName = Console.ReadLine();
+//    var test = ValorantAPI.ValorantAPI.GetMapByName(mapName);
+
+//    Console.WriteLine($"Following callouts");
+    
+//    foreach ( var item in test.callouts )
+//    {
+//        Console.WriteLine(item.regionName);
+//    }
+    
+//    Console.WriteLine(" ");
+//} while (true);
+
+
 do
 {
     Console.WriteLine("Agents Name:");
