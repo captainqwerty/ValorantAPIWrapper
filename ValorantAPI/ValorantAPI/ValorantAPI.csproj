@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Models\AgentModel.cs" />
     <Compile Include="Models\MapModel.cs" />
-    <Compile Include="Models\RoleModel.cs" />
     <Compile Include="ValorantAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

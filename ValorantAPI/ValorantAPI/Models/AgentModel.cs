@@ -2,6 +2,10 @@
 
 namespace ValorantAPI.Models
 {
+    public class AgentsResponse
+    {
+        public List<AgentModel> Data { get; set; }
+    }
     public class AgentModel
     {
         public string uuid { get; set; }

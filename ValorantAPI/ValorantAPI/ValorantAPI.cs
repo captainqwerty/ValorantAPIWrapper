@@ -6,16 +6,6 @@ using ValorantAPI.Models;
 
 namespace ValorantAPI
 {
-    public class AgentsResponse
-    {
-        public List<AgentModel> Data { get; set; }
-    }
-
-    public class MapResponse
-    {
-        public List<MapModel> Data { get; set; }
-    }
-
     public class ValorantAPI
     {
         public static List<AgentModel> GetAllAgents()

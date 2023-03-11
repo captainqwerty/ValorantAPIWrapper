@@ -2,6 +2,11 @@
 
 namespace ValorantAPI.Models
 {
+    public class MapResponse
+    {
+        public List<MapModel> Data { get; set; }
+    }
+
     public class MapModel
     {
         public string uuid { get; set; }
