@@ -7,12 +7,12 @@
 //    var test = ValorantAPI.ValorantAPI.GetMapByName(mapName);
 
 //    Console.WriteLine($"Following callouts");
-    
+
 //    foreach ( var item in test.callouts )
 //    {
 //        Console.WriteLine(item.regionName);
 //    }
-    
+
 //    Console.WriteLine(" ");
 //} while (true);
 
