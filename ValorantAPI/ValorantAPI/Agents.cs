@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using ValorantAPI.Models;
 
 namespace ValorantAPI
@@ -28,6 +30,16 @@ namespace ValorantAPI
             var agent = agents.Where(a => a.displayName.Equals(AgentName.Trim(), StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
 
             return agent;
+        }
+
+        public static AgentModel GetRandomAgent()
+        {
+            var agents = GetAllAgents();
+            Random random = new Random(Guid.NewGuid().GetHashCode()); // Use a unique seed value
+            int randomIndex = random.Next(0, agents.Count); // Generate a random index
+            var randomAgent = agents[randomIndex]; // Access the object at the random index
+
+            return randomAgent;
         }
     }
 }

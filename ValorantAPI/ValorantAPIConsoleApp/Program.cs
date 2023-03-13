@@ -1,4 +1,14 @@
-﻿Console.WriteLine("Valorant API Testing");
+﻿using ValorantAPI;
+
+Console.WriteLine("Valorant API Testing");
+do
+{
+    var agent = Agents.GetRandomAgent();
+
+    Console.WriteLine(agent.displayName);
+    Console.ReadKey();
+} while (true);
+
 
 //do
 //{
@@ -34,18 +44,18 @@
 //    Console.WriteLine(" ");
 //} while (true);
 
-do
-{
-    Console.WriteLine("Weapon Name:");
-    string agentName = Console.ReadLine();
-    var test = ValorantAPI.Weapons.GetWeaponByName(agentName);
+//do
+//{
+//    Console.WriteLine("Weapon Name:");
+//    string agentName = Console.ReadLine();
+//    var test = ValorantAPI.Weapons.GetWeaponByName(agentName);
 
-    Console.WriteLine($"{test.displayName}");
-    Console.WriteLine("");
-    foreach (var ability in test.skins)
-    {
-        Console.WriteLine(ability.displayName);
-        Console.WriteLine("");
-    }
-    Console.WriteLine(" ");
-} while (true);
+//    Console.WriteLine($"{test.displayName}");
+//    Console.WriteLine("");
+//    foreach (var ability in test.skins)
+//    {
+//        Console.WriteLine(ability.displayName);
+//        Console.WriteLine("");
+//    }
+//    Console.WriteLine(" ");
+//} while (true);

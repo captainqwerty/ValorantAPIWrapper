@@ -31,5 +31,15 @@ namespace ValorantAPI
 
             return map;
         }
+
+        public static AgentModel GetRandomAgent()
+        {
+            var maps = GetAllMaps();
+            Random random = new Random(Guid.NewGuid().GetHashCode()); // Use a unique seed value
+            int randomIndex = random.Next(0, maps.Count); // Generate a random index
+            var randomMap = maps[randomIndex]; // Access the object at the random index
+
+            return randomMap;
+        }
     }
 }
