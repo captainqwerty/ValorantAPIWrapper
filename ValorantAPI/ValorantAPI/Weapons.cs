@@ -17,7 +17,7 @@ namespace ValorantAPI
 
             using (var webClient = new System.Net.WebClient())
             {
-                var json = webClient.DownloadString("https://valorant-api.com/v1/maps");
+                var json = webClient.DownloadString("https://valorant-api.com/v1/weapons");
                 WeaponResponse response = JsonConvert.DeserializeObject<WeaponResponse>(json);
                 weapons = response.Data;
             }
