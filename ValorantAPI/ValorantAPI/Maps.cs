@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ValorantAPI.Models;
 
 namespace ValorantAPI
@@ -32,7 +30,7 @@ namespace ValorantAPI
             return map;
         }
 
-        public static AgentModel GetRandomAgent()
+        public static MapModel GetRandomMap()
         {
             var maps = GetAllMaps();
             Random random = new Random(Guid.NewGuid().GetHashCode()); // Use a unique seed value
