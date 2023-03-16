@@ -47,6 +47,12 @@ namespace ValorantAPI
             HashSet<AgentModel> selectedAgents = new HashSet<AgentModel>();
             List<AgentModel> result = new List<AgentModel>();
 
+            if (n >= agents.Count)
+            {
+                result.AddRange(agents.OrderBy(a => random.Next()));
+                return result;
+            }
+
             while (result.Count < n && selectedAgents.Count < agents.Count)
             {
                 int randomIndex = random.Next(0, agents.Count);

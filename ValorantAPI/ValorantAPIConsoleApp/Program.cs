@@ -2,7 +2,10 @@
 
 Console.WriteLine("Valorant API Testing");
 
-var agents = Agents.GetRandomAgents(2);
+Console.WriteLine("Amount of Agents:");
+string amount = Console.ReadLine();
+
+var agents = Agents.GetRandomAgents(Convert.ToInt32(amount));
 
 foreach (var agent in agents)
 {
