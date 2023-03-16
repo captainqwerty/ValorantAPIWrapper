@@ -1,13 +1,15 @@
 ﻿using ValorantAPI;
 
 Console.WriteLine("Valorant API Testing");
-do
-{
-    var agent = Agents.GetRandomAgent();
 
+var agents = Agents.GetRandomAgents(2);
+
+foreach (var agent in agents)
+{
     Console.WriteLine(agent.displayName);
-    Console.ReadKey();
-} while (true);
+}
+
+Console.ReadLine();
 
 
 //do

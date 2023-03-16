@@ -39,5 +39,26 @@ namespace ValorantAPI
 
             return randomAgent;
         }
+
+        public static List<AgentModel> GetRandomAgents(int n)
+        {
+            var agents = GetAllAgents();
+            Random random = new Random(Guid.NewGuid().GetHashCode());
+            HashSet<AgentModel> selectedAgents = new HashSet<AgentModel>();
+            List<AgentModel> result = new List<AgentModel>();
+
+            while (result.Count < n && selectedAgents.Count < agents.Count)
+            {
+                int randomIndex = random.Next(0, agents.Count);
+                var randomAgent = agents[randomIndex];
+                if (!selectedAgents.Contains(randomAgent))
+                {
+                    selectedAgents.Add(randomAgent);
+                    result.Add(randomAgent);
+                }
+            }
+
+            return result;
+        }
     }
 }
