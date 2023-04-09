@@ -8,6 +8,10 @@ namespace ValorantAPI
 {
     public class Weapons
     {
+        /// <summary>
+        /// Retrieves a list of all weapons in Valorant from the Valorant API.
+        /// </summary>
+        /// <returns>A list of WeaponModel objects representing each weapon in Valorant.</returns>
         public static List<WeaponModel> GetAllWeapons()
         {
             List<WeaponModel> weapons;
@@ -22,12 +26,14 @@ namespace ValorantAPI
             return weapons;
         }
 
+        /// <summary>
+        /// Retrieves a weapon in Valorant with the specified name.
+        /// </summary>
+        /// <param name="WeaponName">The name of the weapon to retrieve.</param>
+        /// <returns>A WeaponModel object representing the weapon with the specified name, or null if no weapon is found.</returns>
         public static WeaponModel GetWeaponByName(string WeaponName)
         {
-            var weapons = GetAllWeapons();
-            var weapon = weapons.Where(a => a.displayName.Equals(WeaponName.Trim(), StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
-
-            return weapon;
+            return GetAllWeapons().Where(a => a.displayName.Equals(WeaponName.Trim(), StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
         }
     }
 }
