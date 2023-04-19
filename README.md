@@ -58,7 +58,7 @@
 
 ## About The Project
 
-A very simple project to help developers take advantage of the excellent work done by the Valorant-API.com team.  
+A very simple project to help developers take advantage of the excellent work done by the Valorant-API.com as well as some additional functionality.  
 
 ValorantAPIWrapper is not official and not endorsed by Riot Games in any way.
 Riot Games, Valorant, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.

@@ -6,6 +6,7 @@ using ValorantAPI.Models;
 
 namespace ValorantAPI
 {
+    //https://dash.valorant-api.com/endpoints/weapons
     public class Weapons
     {
         /// <summary>

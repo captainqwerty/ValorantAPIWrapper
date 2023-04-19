@@ -7,6 +7,7 @@ using ValorantAPI.Models;
 
 namespace ValorantAPI
 {
+    // https://dash.valorant-api.com/endpoints/agents
     public class Agents
     {
         /// <summary>
