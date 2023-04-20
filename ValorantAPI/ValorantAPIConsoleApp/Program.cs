@@ -35,35 +35,35 @@ Console.WriteLine("Valorant API Testing");
 //    Console.WriteLine(" ");
 //} while (true);
 
-do
-{
-    Console.WriteLine("Agents Name:");
-    string agentName = Console.ReadLine();
-    var test = Agents.GetAgentByName(agentName);
-
-    Console.WriteLine($"{test.displayName} is a {test.role.displayName} and their developer was {test.developerName}. {test.displayName} has the following abilties:");
-    Console.WriteLine("");
-    foreach (var ability in test.abilities)
-    {
-        Console.WriteLine(ability.displayName);
-        Console.WriteLine(ability.description);
-        Console.WriteLine("");
-    }
-    Console.WriteLine(" ");
-} while (true);
-
 //do
 //{
-//    Console.WriteLine("Weapon Name:");
+//    Console.WriteLine("Agents Name:");
 //    string agentName = Console.ReadLine();
-//    var test = ValorantAPI.Weapons.GetWeaponByName(agentName);
+//    var test = Agents.GetAgentByName(agentName);
 
-//    Console.WriteLine($"{test.displayName}");
+//    Console.WriteLine($"{test.displayName} is a {test.role.displayName} and their developer was {test.developerName}. {test.displayName} has the following abilties:");
 //    Console.WriteLine("");
-//    foreach (var ability in test.skins)
+//    foreach (var ability in test.abilities)
 //    {
 //        Console.WriteLine(ability.displayName);
+//        Console.WriteLine(ability.description);
 //        Console.WriteLine("");
 //    }
 //    Console.WriteLine(" ");
 //} while (true);
+
+do
+{
+    Console.WriteLine("Weapon Name:");
+    string agentName = Console.ReadLine();
+    var test = ValorantAPI.Weapons.GetWeaponByName(agentName);
+
+    Console.WriteLine($"{test.displayName}");
+    Console.WriteLine("");
+    foreach (var ability in test.skins)
+    {
+        Console.WriteLine(ability.displayName);
+        Console.WriteLine("");
+    }
+    Console.WriteLine(" ");
+} while (true);
