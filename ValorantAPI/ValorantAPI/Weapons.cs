@@ -36,5 +36,23 @@ namespace ValorantAPI
         {
             return GetAllWeapons().Where(a => a.displayName.Equals(WeaponName.Trim(), StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
         }
+
+        /// <summary>
+        /// Retrieves a list of all weapons in Valorant from the Valorant API.
+        /// </summary>
+        /// <returns>A list of WeaponModel objects representing each weapon in Valorant.</returns>
+        public static List<SkinModel> GetAllSKins()
+        {
+            List<SkinModel> skins;
+
+            using (var webClient = new System.Net.WebClient())
+            {
+                var json = webClient.DownloadString("https://valorant-api.com/v1/weapons/skins");
+                SkinResponse response = JsonConvert.DeserializeObject<SkinResponse>(json);
+                skins = response.Data;
+            }
+
+            return skins;
+        }
     }
 }
