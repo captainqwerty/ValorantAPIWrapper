@@ -72,6 +72,56 @@ var searchResult = Agents.GetAgentByName("Jett");
 
 // Get a random playable agent
 var randomAgent = Agents.GetRandomAgent();
+
+// Get a set amount of random agents - if no number is specified a single agent is returned
+var randomAgent = Agents.GetRandomAgent(5);
+```
+
+The agent models returned contain the following data
+
+```csharp
+public class AgentModel
+{
+    public string uuid { get; set; }
+    public string displayName { get; set; }
+    public string description { get; set; }
+    public string developerName { get; set; }
+    public string displayIcon { get; set; }
+    public string displayIconSmall { get; set; }
+    public Role role { get; set; }
+    public List<Ability> abilities { get; set; }
+    public VoiceLine voiceLine { get; set; }
+}
+
+public class MediaList
+{
+    public int id { get; set; }
+    public string wwise { get; set; }
+    public string wave { get; set; }
+}
+
+public class VoiceLine
+{
+    public double minDuration { get; set; }
+    public double maxDuration { get; set; }
+    public List<MediaList> mediaList { get; set; }
+}
+
+public class Ability
+{
+    public string displayName { get; set; }
+    public string description { get; set; }
+    public string displayIcon { get; set; }
+}
+
+public class Role
+{
+    public string uuid { get; set; }
+    public string displayName { get; set; }
+    public string description { get; set; }
+    public string displayIcon { get; set; }
+    public string assetPath { get; set; }
+}
 ```
 
 ### Maps
@@ -87,6 +137,38 @@ var searchResult = Maps.GetMapByName("Ascent");
 var randomMap = Maps.GetRandomMap();
 ```
 
+```csharp
+ public class MapModel
+{
+    public string uuid { get; set; }
+    public string displayName { get; set; }
+    public string coordinates { get; set; }
+    public string displayIcon { get; set; }
+    public string listViewIcon { get; set; }
+    public string splash { get; set; }
+    public string assetPath { get; set; }
+    public string mapUrl { get; set; }
+    public double xMultiplier { get; set; }
+    public double yMultiplier { get; set; }
+    public double xScalarToAdd { get; set; }
+    public double yScalarToAdd { get; set; }
+    public List<Callout> callouts { get; set; }
+}
+
+public class Callout
+{
+    public string regionName { get; set; }
+    public string superRegionName { get; set; }
+    public Location location { get; set; }
+}
+
+public class Location
+{
+    public double x { get; set; }
+    public double y { get; set; }
+}
+```
+
 ### Weapons
 
 ```csharp
@@ -97,6 +179,129 @@ var allWeapons = Weapons.GetAllWeapons();
 var searchResult = Weapons.GetWeaponByName("Vandal");
 ```
 
+```csharp
+public class AdsStats
+{
+    public double zoomMultiplier { get; set; }
+    public double fireRate { get; set; }
+    public double runSpeedMultiplier { get; set; }
+    public int burstCount { get; set; }
+    public double firstBulletAccuracy { get; set; }
+}
+
+public class AirBurstStats
+{
+    public int shotgunPelletCount { get; set; }
+    public double burstDistance { get; set; }
+}
+
+public class AltShotgunStats
+{
+    public int shotgunPelletCount { get; set; }
+    public double burstRate { get; set; }
+}
+
+public class Chroma
+{
+    public string uuid { get; set; }
+    public string displayName { get; set; }
+    public string displayIcon { get; set; }
+    public string fullRender { get; set; }
+    public string swatch { get; set; }
+    public string streamedVideo { get; set; }
+    public string assetPath { get; set; }
+}
+
+public class DamageRange
+{
+    public int rangeStartMeters { get; set; }
+    public int rangeEndMeters { get; set; }
+    public double headDamage { get; set; }
+    public int bodyDamage { get; set; }
+    public double legDamage { get; set; }
+}
+
+public class WeaponModel
+{
+    public string uuid { get; set; }
+    public string displayName { get; set; }
+    public string category { get; set; }
+    public string defaultSkinUuid { get; set; }
+    public string displayIcon { get; set; }
+    public string killStreamIcon { get; set; }
+    public string assetPath { get; set; }
+    public WeaponStats weaponStats { get; set; }
+    public ShopData shopData { get; set; }
+    public List<Skin> skins { get; set; }
+}
+
+public class GridPosition
+{
+    public int row { get; set; }
+    public int column { get; set; }
+}
+
+public class Level
+{
+    public string uuid { get; set; }
+    public string displayName { get; set; }
+    public string levelItem { get; set; }
+    public string displayIcon { get; set; }
+    public string streamedVideo { get; set; }
+    public string assetPath { get; set; }
+}
+
+public class Root
+{
+    public int status { get; set; }
+    public List<WeaponModel> data { get; set; }
+}
+
+public class ShopData
+{
+    public int cost { get; set; }
+    public string category { get; set; }
+    public string categoryText { get; set; }
+    public GridPosition gridPosition { get; set; }
+    public bool canBeTrashed { get; set; }
+    public object image { get; set; }
+    public string newImage { get; set; }
+    public object newImage2 { get; set; }
+    public string assetPath { get; set; }
+}
+
+public class Skin
+{
+    public string uuid { get; set; }
+    public string displayName { get; set; }
+    public string themeUuid { get; set; }
+    public string contentTierUuid { get; set; }
+    public string displayIcon { get; set; }
+    public string wallpaper { get; set; }
+    public string assetPath { get; set; }
+    public List<Chroma> chromas { get; set; }
+    public List<Level> levels { get; set; }
+}
+
+public class WeaponStats
+{
+    public double fireRate { get; set; }
+    public int magazineSize { get; set; }
+    public double runSpeedMultiplier { get; set; }
+    public double equipTimeSeconds { get; set; }
+    public double reloadTimeSeconds { get; set; }
+    public double firstBulletAccuracy { get; set; }
+    public int shotgunPelletCount { get; set; }
+    public string wallPenetration { get; set; }
+    public string feature { get; set; }
+    public string fireMode { get; set; }
+    public string altFireType { get; set; }
+    public AdsStats adsStats { get; set; }
+    public AltShotgunStats altShotgunStats { get; set; }
+    public AirBurstStats airBurstStats { get; set; }
+    public List<DamageRange> damageRanges { get; set; }
+}
+```
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
