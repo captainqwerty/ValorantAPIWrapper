@@ -63,6 +63,10 @@ do
     foreach (var ability in test.skins)
     {
         Console.WriteLine(ability.displayName);
+        foreach (var wtf in ability.chromas)
+        {
+            Console.WriteLine(wtf.displayName);
+        }
         Console.WriteLine("");
     }
     Console.WriteLine(" ");

@@ -17,7 +17,7 @@
 <h3 align="center">Valorant API Wrapper</h3>
 
   <p align="center">
-    A C# wrapper for valorant-api.com
+    A .NET wrapper for valorant-api.com
     <br />
     <a href="https://github.com/CaptainQwerty/ValorantAPIWrapper"><strong>Explore the docs »</strong></a>
     <br />
@@ -31,34 +31,9 @@
 </div>
 
 
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
 ## About The Project
 
-A very simple project to help developers take advantage of the excellent work done by the Valorant-API.com as well as some additional functionality.  
+A very simple project to help developers take advantage of the excellent work done by the Valorant-API.com - giving easy access to a portition of the more common parts of the Valorant-API as well as some additional functionality. 
 
 ValorantAPIWrapper is not official and not endorsed by Riot Games in any way.
 Riot Games, Valorant, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
@@ -68,24 +43,60 @@ Riot Games, Valorant, and all associated properties are trademarks or registered
 <!-- GETTING STARTED -->
 ## Getting Started
 
-TO BE WROTE
+Here you can find the prerequisites and installation instructions.
 
 ### Prerequisites
 
-TO BE WROTE
+* .NET Framework 4.6.1 or later
 
 ### Installation
 
-TO BE WROTE
+TO BE WROTE ONCE ON NUGET
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- USAGE EXAMPLES -->
-## Usage
+## Usage Examples
 
-TO BE WROTE
+After installing the package you can follow any of the below examples to get started.
+
+### Agents
+
+```csharp
+// Get a list of all playable agents in Valorant
+var allAgents = Agents.GetAllAgents();
+
+// Search for an agent by name
+var searchResult = Agents.GetAgentByName("Jett");
+
+// Get a random playable agent
+var randomAgent = Agents.GetRandomAgent();
+```
+
+### Maps
+
+```csharp
+// Get a list of all maps in Valorant
+var allMaps = Maps.GetAllMaps();
+
+// Search for a map by name
+var searchResult = Maps.GetMapByName("Ascent");
+
+// Get a random map
+var randomMap = Maps.GetRandomMap();
+```
+
+### Weapons
+
+```csharp
+// Get a list of all weapons in Valorant
+var allWeapons = Weapons.GetAllWeapons();
+
+// Search for a weapon by name
+var searchResult = Weapons.GetWeaponByName("Vandal");
+```
+
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -116,8 +127,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Acknowledgments
 
-* [Best-README-Template](https://github.com/othneildrew/Best-README-Template) - [Othneildrew](https://github.com/othneildrew/)
 * [Valorant-API.com](https://valorant-api.com/)
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template) - [Othneildrew](https://github.com/othneildrew/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
