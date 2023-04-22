@@ -39,25 +39,6 @@ namespace ValorantAPI
         }
 
         /// <summary>
-        /// Searches for a playable agent in Valorant by UUID.
-        /// </summary>
-        /// <param name="agentUuid">The specific agent UUID to search for.</param>
-        /// <returns>An AgentModel object representing the agent whose UUID matches that which was searched for, or null if no agent is found.</returns>
-        public static AgentModel GetAgentByUUID(string agentUuid)
-        {
-            var agent = new List<AgentModel>();
-
-            using (var webClient = new System.Net.WebClient())
-            {
-                var json = webClient.DownloadString($"https://valorant-api.com/v1/agents/{agentUuid}");
-                AgentsResponse response = JsonConvert.DeserializeObject<AgentsResponse>(json);
-                agent = response.Data;
-            }
-            
-            return agent.FirstOrDefault();
-        }
-
-        /// <summary>
         /// Retrieves a random playable agent in Valorant from the list of available agents.
         /// </summary>
         /// <returns>An AgentModel object representing the randomly selected agent.</returns>
