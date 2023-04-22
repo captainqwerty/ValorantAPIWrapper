@@ -39,10 +39,9 @@ do
 {
     Console.WriteLine("Agents Name:");
     string agentName = Console.ReadLine();
-    var test = Agents.GetAgentByUUID(agentName);
+    var test = Agents.GetAgentByName(agentName);
 
     Console.WriteLine($"{test.displayName} is a {test.role.displayName} and their developer was {test.developerName}. {test.displayName} has the following abilties:");
-    Console.WriteLine($"{test.uuid}");
     Console.WriteLine("");
     foreach (var ability in test.abilities)
     {
