@@ -14,11 +14,13 @@ namespace ValorantAPIWrapper
         {
             List<WeaponModel> weapons;
 
-            using (var webClient = new System.Net.WebClient())
+            using (var httpClient = new HttpClient())
             {
-                var json = webClient.DownloadString("https://valorant-api.com/v1/weapons");
-                WeaponResponse response = JsonConvert.DeserializeObject<WeaponResponse>(json);
-                weapons = response.Data;
+                var uri = new Uri("https://valorant-api.com/v1/weapons");
+                var response = await httpClient.GetAsync(uri);
+                var json = await response.Content.ReadAsStringAsync();
+                WeaponResponse weaponResponse = JsonConvert.DeserializeObject<WeaponResponse>(json);
+                weapons = weaponResponse.Data;
             }
 
             return weapons;
