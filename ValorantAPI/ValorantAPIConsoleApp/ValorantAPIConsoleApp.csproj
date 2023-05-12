@@ -8,11 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Security.Permissions" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ValorantAPI\ValorantAPI.csproj" />
+    <Reference Include="ValorantAPIWrapper">
+      <HintPath>ValorantAPIWrapper.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

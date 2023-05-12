@@ -1,4 +1,4 @@
-﻿using ValorantAPI;
+﻿using ValorantAPIWrapper;
 
 Console.WriteLine("Valorant API Wrapper Demo");
 

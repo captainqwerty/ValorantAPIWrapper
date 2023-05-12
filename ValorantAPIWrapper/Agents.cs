@@ -14,7 +14,7 @@ namespace ValorantAPIWrapper
         {
             var agents = new List<AgentModel>();
 
-            using (var httpClient = new System.Net.Http.HttpClient())
+            using (var httpClient = new HttpClient())
             {
                 var uri = new Uri("https://valorant-api.com/v1/agents?isPlayableCharacter=true");
                 var response = await httpClient.GetAsync(uri);
@@ -41,10 +41,10 @@ namespace ValorantAPIWrapper
         /// Retrieves a random playable agent in Valorant from the list of available agents.
         /// </summary>
         /// <returns>An AgentModel object representing the randomly selected agent.</returns>
-        public static AgentModel GetRandomAgent()
+        public async static Task<AgentModel> GetRandomAgent()
         {
-            var randomAgent = GetRandomAgents();
-            return randomAgent[0];
+            var randomAgents = await GetRandomAgents();
+            return randomAgents[0];
         }
 
         /// <summary>
@@ -52,9 +52,9 @@ namespace ValorantAPIWrapper
         /// </summary>
         /// <param name="n">The number of agents to retrieve. Default is 1.</param>
         /// <returns>A list of AgentModel objects representing the randomly selected agents.</returns>
-        public static List<AgentModel> GetRandomAgents(int n = 1)
+        public async static Task<List<AgentModel>> GetRandomAgents(int n = 1)
         {
-            var agents = GetAllAgents();
+            var agents = await GetAllAgents();
             Random random = new Random(Guid.NewGuid().GetHashCode()); // Use a unique seed value
             HashSet<AgentModel> selectedAgents = new HashSet<AgentModel>(); // Generate a random index
             List<AgentModel> result = new List<AgentModel>();
@@ -67,7 +67,7 @@ namespace ValorantAPIWrapper
 
             while (result.Count < n && selectedAgents.Count < agents.Count)
             {
-                int randomIndex = random.Next(0, agents.Count);
+                int randomIndex = await Task.Run(() => random.Next(0, agents.Count));
                 var randomAgent = agents[randomIndex];
                 if (!selectedAgents.Contains(randomAgent))
                 {
