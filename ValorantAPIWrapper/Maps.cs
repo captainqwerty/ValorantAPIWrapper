@@ -32,7 +32,9 @@ namespace ValorantAPIWrapper
         /// <returns>A MapModel object representing the map with the specified name, or null if no map is found.</returns>
         public async static Task<MapModel> GetMapByName(string MapName)
         {
-            return await GetAllMaps().Where(a => a.displayName.Equals(MapName.Trim(), StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+            var maps = await GetAllMaps();
+            var map = maps.Where(a => a.displayName.Equals(MapName.Trim(), StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+            return map;
         }
 
         /// <summary>
@@ -41,9 +43,9 @@ namespace ValorantAPIWrapper
         /// <returns>A MapModel object representing the randomly selected map.</returns>
         public async static Task<MapModel> GetRandomMap()
         {
-            var maps = GetAllMaps();
+            var maps = await GetAllMaps();
             Random random = new Random(Guid.NewGuid().GetHashCode()); // Use a unique seed value
-            int randomIndex = random.Next(0, maps.Count); // Generate a random index
+            int randomIndex = await Task.Run(() => random.Next(0, maps.Count)); // Generate a random index
 
             return maps[randomIndex];
         }
