@@ -5,7 +5,7 @@ Console.WriteLine("Valorant API Wrapper Demo");
 // Map Example
 Console.WriteLine("Map Name:");
 string mapName = Console.ReadLine();
-var map = Maps.GetMapByName(mapName);
+var map = await Maps.GetMapByName(mapName);
 
 Console.WriteLine($"Following callouts");
 
@@ -14,11 +14,10 @@ foreach (var callout in map.callouts)
     Console.WriteLine(callout.regionName);
 }
 
-
 // Agent Example
 Console.WriteLine("Agents Name:");
 string agentName = Console.ReadLine();
-var agent = Agents.GetAgentByName(agentName);
+var agent = await Agents.GetAgentByName(agentName);
 
 Console.WriteLine($"{agent.displayName} is a {agent.role.displayName} and their developer was {agent.developerName}. {agent.displayName} has the following abilties:");
 Console.WriteLine("");
@@ -33,7 +32,7 @@ Console.WriteLine(" ");
 // Weapon Example
 Console.WriteLine("Weapon Name:");
 string weaponName = Console.ReadLine();
-var weapon = Weapons.GetWeaponByName(weaponName);
+var weapon = await Weapons.GetWeaponByName(weaponName);
 
 Console.WriteLine($"{weapon.displayName}");
 Console.WriteLine("");
