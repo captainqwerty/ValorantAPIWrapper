@@ -10,7 +10,7 @@ namespace ValorantAPIWrapper
         /// Retrieves a list of all weapons in Valorant from the Valorant API.
         /// </summary>
         /// <returns>A list of WeaponModel objects representing each weapon in Valorant.</returns>
-        public static List<WeaponModel> GetAllWeapons()
+        public async static Task<List<WeaponModel>> GetAllWeapons()
         {
             List<WeaponModel> weapons;
 
@@ -29,9 +29,12 @@ namespace ValorantAPIWrapper
         /// </summary>
         /// <param name="WeaponName">The name of the weapon to retrieve.</param>
         /// <returns>A WeaponModel object representing the weapon with the specified name, or null if no weapon is found.</returns>
-        public static WeaponModel GetWeaponByName(string WeaponName)
+        public async static Task<WeaponModel> GetWeaponByName(string WeaponName)
         {
-            return GetAllWeapons().Where(a => a.displayName.Equals(WeaponName.Trim(), StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+            var weapons = await GetAllWeapons();
+            var weapon = weapons.Where(a => a.displayName.Equals(WeaponName.Trim(), StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+
+            return weapon;
         }
     }
 }
