@@ -45,7 +45,7 @@ namespace ValorantAPIWrapper
         public async static Task<MapModel> GetRandomMap()
         {
             var maps = await GetAllMaps();
-            Random random = new Random(Guid.NewGuid().GetHashCode()); // Use a unique seed value
+            Random random = new(Guid.NewGuid().GetHashCode()); // Use a unique seed value
             int randomIndex = await Task.Run(() => random.Next(0, maps.Count)); // Generate a random index
 
             return maps[randomIndex];
