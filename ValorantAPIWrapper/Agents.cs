@@ -55,7 +55,7 @@ namespace ValorantAPIWrapper
         public async static Task<List<AgentModel>> GetRandomAgents(int n = 1)
         {
             var agents = await GetAllAgents();
-            Random random = new Random(Guid.NewGuid().GetHashCode()); // Use a unique seed value
+            Random random = new(Guid.NewGuid().GetHashCode()); // Use a unique seed value
             HashSet<AgentModel> selectedAgents = new(); // Generate a random index
             List<AgentModel> result = new();
 
