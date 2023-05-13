@@ -47,7 +47,8 @@ Here you can find the prerequisites and installation instructions.
 
 ### Prerequisites
 
-* .NET Framework 4.6.1 or later
+* [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
+* .NET 6.0
 
 ### Installation
 
