@@ -57,7 +57,7 @@ namespace ValorantAPIWrapper
             var agents = await GetAllAgents();
             Random random = new Random(Guid.NewGuid().GetHashCode()); // Use a unique seed value
             HashSet<AgentModel> selectedAgents = new HashSet<AgentModel>(); // Generate a random index
-            List<AgentModel> result = new List<AgentModel>();
+            List<AgentModel> result = new();
 
             if (n >= agents.Count)
             {
