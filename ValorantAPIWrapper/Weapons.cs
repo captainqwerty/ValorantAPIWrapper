@@ -3,7 +3,7 @@ using ValorantAPIWrapper.Models;
 
 namespace ValorantAPIWrapper
 {
-    //https://dash.valorant-api.com/endpoints/weapons
+    // https://dash.valorant-api.com/endpoints/weapons
     public class Weapons
     {
         /// <summary>

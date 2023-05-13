@@ -3,6 +3,7 @@ using ValorantAPIWrapper.Models;
 
 namespace ValorantAPIWrapper
 {
+    // https://dash.valorant-api.com/endpoints/maps
     public class Maps
     {
         /// <summary>
