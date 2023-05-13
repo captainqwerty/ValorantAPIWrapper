@@ -389,5 +389,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-shield]: https://img.shields.io/github/issues/CaptainQwerty/ValorantAPIWrapper.svg?style=for-the-badge
 [issues-url]: https://github.com/CaptainQwerty/ValorantAPIWrapper/issues
 [license-shield]: https://img.shields.io/github/license/CaptainQwerty/ValorantAPIWrapper.svg?style=for-the-badge
-[license-url]: https://github.com/CaptainQwerty/ValorantAPIWrapper/blob/master/LICENSE.txt
+[license-url]: https://github.com/CaptainQwerty/ValorantAPIWrapper/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
