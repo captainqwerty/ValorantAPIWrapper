@@ -50,32 +50,64 @@ Here you can find the prerequisites and installation instructions.
 * [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
 * .NET 6.0
 
-### Installation
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-TO BE WROTE ONCE ON NUGET
+## Installation
+
+### NutGet Installation
+Coming soon
+
+### Manual Installation
+Download the [latest release](https://github.com/captainqwerty/ValorantAPIWrapper/releases), extract the .dll file and reference it in your project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- USAGE EXAMPLES -->
-## Usage Examples
+## Features Usage Examples
 
 After installing the package you can follow any of the below examples to get started.
 
 ### Agents
 
+
 ```csharp
 // Get a list of all playable agents in Valorant
-var allAgents = Agents.GetAllAgents();
+var allAgents = await Agents.GetAllAgents();
 
+foreach(var agent in allAgents) {
+    agent.displayName
+}
+```
+
+
+```csharp
 // Search for an agent by name
-var searchResult = Agents.GetAgentByName("Jett");
+var searchResult = await Agents.GetAgentByName("Jett");
 
+foreach(var ability in searchResult.abilities) {
+    ability.displayName
+    ability.description
+}
+```
+
+```csharp
 // Get a random playable agent
-var randomAgent = Agents.GetRandomAgent();
+var randomAgent = await Agents.GetRandomAgent();
 
+foreach(var agent in allAgents) {
+    agent.displayName
+}
+```
+
+```csharp
 // Get a set amount of random agents - if no number is specified a single agent is returned
-var randomAgent = Agents.GetRandomAgent(5);
+var randomAgents = await Agents.GetRandomAgents(5);
+
+foreach(var agent in randomAgents) {
+    agent.displayName
+    agent.descritpion
+}
 ```
 
 The agent models returned contain the following data
@@ -129,13 +161,27 @@ public class Role
 
 ```csharp
 // Get a list of all maps in Valorant
-var allMaps = Maps.GetAllMaps();
+var allMaps = await Maps.GetAllMaps();
 
+foreach(var map in allMaps) {
+    map.displayName
+}
+```
+
+```csharp
 // Search for a map by name
-var searchResult = Maps.GetMapByName("Ascent");
+var searchResult = await Maps.GetMapByName("Ascent");
 
+searchResult.displayName
+searchResult.coordinates
+```
+
+```csharp
 // Get a random map
-var randomMap = Maps.GetRandomMap();
+var randomMap = await Maps.GetRandomMap();
+
+randomMap.displayName
+randomMap.coordinates
 ```
 
 ```csharp
@@ -174,10 +220,20 @@ public class Location
 
 ```csharp
 // Get a list of all weapons in Valorant
-var allWeapons = Weapons.GetAllWeapons();
+var allWeapons = await Weapons.GetAllWeapons();
 
+foreach (var weapon in allWeapons) {
+    weapon.displayName
+    weapon.uuid
+}
+```
+
+```csharp
 // Search for a weapon by name
-var searchResult = Weapons.GetWeaponByName("Vandal");
+var searchResult = await Weapons.GetWeaponByName("Vandal");
+
+searchResult.displayName
+searchResult.DamageRange.headDamage
 ```
 
 ```csharp
